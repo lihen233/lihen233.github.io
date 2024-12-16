@@ -3,7 +3,7 @@ name: Deploy Hexo Blog
 on:
   push:
     branches:
-      - main  # 监听源码仓库的 main 分支
+      - main
 
 jobs:
   build-and-deploy:
@@ -30,11 +30,11 @@ jobs:
       run: |
         npx hexo generate
 
-    # 5. 部署静态文件到博客仓库
+    # 5. 部署到博客仓库
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
+        personal_token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
         external_repository: lihen233/lihen233.github.io
         publish_branch: gh-pages
         publish_dir: ./public
