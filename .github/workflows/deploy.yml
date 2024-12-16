@@ -1,0 +1,39 @@
+name: Deploy Hexo Blog
+
+# 触发条件：当推送到 main 分支时
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. 检出源码
+    - name: Checkout source files
+      uses: actions/checkout@v2
+
+    # 2. 设置 Node.js 环境
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    # 3. 安装 Hexo 和依赖
+    - name: Install dependencies
+      run: |
+        npm install
+
+    # 4. 生成静态文件
+    - name: Build Hexo
+      run: |
+        npx hexo generate
+
+    # 5. 部署到 GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
