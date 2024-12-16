@@ -14,23 +14,32 @@ jobs:
     - name: Checkout source repository
       uses: actions/checkout@v2
 
-    # 2. 设置 Node.js 环境
+    # 2. 缓存 Node.js 依赖
+    - name: Cache Node.js modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    # 3. 设置 Node.js 环境
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '16'
 
-    # 3. 安装 Hexo 和依赖
+    # 4. 安装 Hexo 和依赖
     - name: Install dependencies
       run: |
         npm install
 
-    # 4. 生成静态文件
+    # 5. 生成静态文件
     - name: Build Hexo
       run: |
         npx hexo generate
 
-    # 5. 部署到博客仓库
+    # 6. 部署到博客仓库
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
