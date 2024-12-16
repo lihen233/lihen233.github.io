@@ -1,18 +1,17 @@
 name: Deploy Hexo Blog
 
-# 触发条件：当推送到 main 分支时
 on:
   push:
     branches:
-      - main
+      - main  # 监听源码仓库的 main 分支
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. 检出源码
-    - name: Checkout source files
+    # 1. 检出源码仓库
+    - name: Checkout source repository
       uses: actions/checkout@v2
 
     # 2. 设置 Node.js 环境
@@ -31,9 +30,11 @@ jobs:
       run: |
         npx hexo generate
 
-    # 5. 部署到 GitHub Pages
+    # 5. 部署静态文件到博客仓库
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        external_repository: lihen233/lihen233.github.io
+        publish_branch: gh-pages
         publish_dir: ./public
