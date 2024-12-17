@@ -30,11 +30,6 @@ name = "Email: lihen233@gmail.com"
 link = "https://t.me/Mutass_uni"
 name = "Telegram"
 
-[[params.contact]]
-name = "切换主题"
-link = "javascript:void(0)" # 使用 JavaScript 链接占位
-id = "theme-toggle"         # 给链接一个唯一的 ID
-
 [[params.socials]]
 name = "Haven"
 link = "/mai-waifu" # 跳转到本地页面（在Hugo中定义路径）
