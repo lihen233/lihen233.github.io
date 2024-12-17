@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 头部 -->
+        <header>
+            {{ partial "header.html" . }}
+        </header>
+
+        <!-- 主内容区域 -->
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <!-- 页脚 -->
+        {{ partial "footer.html" . }}
+    </div>
+</body>
+</html>

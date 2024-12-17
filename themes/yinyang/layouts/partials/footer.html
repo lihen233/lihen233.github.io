@@ -1,15 +1,14 @@
-<footer>
-  <ul>
-      {{ range .Site.Params.contact }}
-      <li>
-          {{ if .link }}
-              <a href="{{ .link }}" id="{{ .id | default "" }}">{{ .name }}</a>
-          {{ else }}
-              {{ .name }}
-          {{ end }}
-      </li>
-      {{ end }}
-  </ul>
-</footer>
-
-
+<footer class="site-footer">
+    <ul>
+        {{ range .Site.Params.contact }}
+        <li class="site-footer-item">
+            {{ if .link }}
+                <a href="{{ .link }}" id="{{ .id | default "" }}">{{ .name }}</a>
+            {{ else }}
+                {{ .name }}
+            {{ end }}
+        </li>
+        {{ end }}
+    </ul>
+  </footer>
+    
