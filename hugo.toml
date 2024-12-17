@@ -30,3 +30,7 @@ name = "Email: lihen233@gmail.com"
 [[params.contact]]
 link = "https://t.me/Mutass_uni"
 name = "Telegram"
+
+[[params.socials]]
+name = "Haven"
+link = "/mai-waifu" # 跳转到本地页面（在Hugo中定义路径）

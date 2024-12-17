@@ -68,3 +68,6 @@
   {{ if .Site.Params.TwitterCards }}{{ template "_internal/twitter_cards.html" . }}{{ end }}
   {{ .Site.Params.extraHead | safeHTML }}
 </head>
+
+<script src="{{ "js/image-modal.js" | relURL }}" defer></script>
+

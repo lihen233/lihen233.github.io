@@ -1,21 +1,9 @@
 /* global */
 
 body {
-  background-image: url('https://i.imgur.com/XWbQnUm.jpeg'); /* 引入背景图片 */
-  background-size: cover; /* 拉伸背景图片以覆盖整个屏幕 */
-  background-position: center; /* 图片居中显示 */
-  background-attachment: fixed; /* 固定背景，不随页面滚动 */
   font-family: "Bree Serif", sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0 20px;
-}
-
-/* 手机端背景图片 */
-@media screen and (max-width: 768px) {
-  body {
-    background-image: url('https://i.imgur.com/xsFg3PJ.jpeg'); /* 手机端背景 */
-    background-attachment: scroll; /* 手机端设置为滚动 */
-  }
 }
 
 article {
@@ -308,29 +296,55 @@ a:hover {
   }
 }
 
-/* 底部联系方式容器 */
-.footer-contact {
-  text-align: center; /* 居中显示 */
-  margin: 20px 0; /* 上下边距 */
+/* 图片容器样式 */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 居中显示 */
+  gap: 15px; /* 图片之间的间隔 */
+  margin: 20px;
 }
 
-/* 列表样式 */
-.footer-contact ul {
-  list-style: none; /* 移除列表圆点 */
-  padding: 0; /* 移除内边距 */
-  display: inline-flex;
-  gap: 20px; /* 联系方式之间的间距 */
+/* 等比例缩放的图片样式 */
+.image-gallery img {
+  width: 100%; /* 图片宽度占满父容器 */
+  max-width: 300px; /* 设置最大宽度，避免过大 */
+  height: auto; /* 高度自动调整，保证等比例缩放 */
+  object-fit: contain; /* 等比例缩放，完整显示图片 */
+  border-radius: 8px; /* 圆角 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* 鼠标悬停手势 */
+  transition: transform 0.3s ease-in-out;
 }
 
-/* 列表项样式 */
-.footer-contact li {
-  display: inline-block;
-  font-size: 18px;
-  color: #ddd; /* 文本颜色 */
-  font-weight: bold;
-  transition: color 0.3s ease; /* 悬停时渐变 */
+.image-gallery img:hover {
+  transform: scale(1.05); /* 悬停时微微放大 */
 }
 
-.footer-contact li:hover {
-  color: #fff; /* 鼠标悬停时变为白色 */
+/* 模态框样式 */
+.modal {
+  display: none; /* 初始隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 模态框淡入动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
