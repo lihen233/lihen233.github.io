@@ -8,8 +8,6 @@ description = "Keep It Simple, Stupid"
 headTitle = "Az Életem Története" 
 lazyImage = true
 
-paginate = 12
-
 [markup]                        # 配置 Hugo 的内容标记处理
   [markup.goldmark]             # 配置 Goldmark（Hugo 默认的 Markdown 渲染器）
     [markup.goldmark.renderer]
