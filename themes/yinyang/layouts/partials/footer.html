@@ -1,14 +1,21 @@
 <footer class="site-footer">
-    <ul>
-        {{ range .Site.Params.contact }}
-        <li class="site-footer-item">
-            {{ if .link }}
-                <a href="{{ .link }}" id="{{ .id | default "" }}">{{ .name }}</a>
-            {{ else }}
-                {{ .name }}
+    <div class="footer-content">
+        <ul class="footer-links">
+            {{ range .Site.Params.contact }}
+            <li class="footer-item">
+                {{ if .link }}
+                    <a href="{{ .link }}" id="{{ .id | default "" }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+                {{ else }}
+                    {{ .name }}
+                {{ end }}
+            </li>
             {{ end }}
-        </li>
-        {{ end }}
-    </ul>
-  </footer>
-    
+        </ul>
+        <p class="footer-copyright">
+            © {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+
+<script src="{{ "js/copy-code.js" | relURL }}"></script>
