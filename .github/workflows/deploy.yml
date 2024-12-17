@@ -31,7 +31,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.HUGO_BLOG_TOKEN }} # 使用个人访问令牌
+          github_token: ${{ secrets.personal_token }} # 使用个人访问令牌
           publish_dir: ./public # Hugo 生成的静态文件目录
           external_repository: lihen233/lihen233.github.io # 博客仓库
           publish_branch: main # 博客仓库的分支
