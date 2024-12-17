@@ -354,12 +354,49 @@ a:hover {
   to { opacity: 1; }
 }
 
-/* 手动深色模式 */
+/* 默认（白天模式）样式 */
+body {
+  background-color: #c3bca9; /* 柔和的浅灰色背景 */
+  color: #333333; /* 深灰色文字 */
+  transition: background-color 0.3s, color 0.3s; /* 平滑过渡 */
+}
+
+/* 深色模式 */
 body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #000000; /* 深色背景 */
+  color: #b9b5b5; /* 白色文字 */
 }
 
 body.dark-mode a {
-  color: #90caf9;
+  color: #a46029; /* 链接颜色 */
+}
+
+body.dark-mode .image-gallery img {
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2); /* 图片阴影调整 */
+}
+
+/* 修正列表样式 */
+ul {
+  list-style-type: none; /* 去除默认的列表圆点 */
+  padding: 0;
+  margin: 0;
+  display: flex; /* 横向排列 */
+  gap: 20px; /* 列表项之间的间距 */
+  justify-content: center; /* 居中显示 */
+}
+
+ul li {
+  display: inline-block; /* 让列表项横向排列 */
+}
+
+/* 链接样式 */
+ul li a {
+  color: #3f338b; /* 链接颜色 */
+  text-decoration: none; /* 去除下划线 */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+ul li a:hover {
+  color: #117f58; /* 鼠标悬停时变色 */
 }

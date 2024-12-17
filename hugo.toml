@@ -4,8 +4,8 @@ title = 'Mutass的博客'
 theme = "yinyang"
 
 [params]
-description = "Keep It Simple, Stupid" 
-headTitle = "Az Életem Története" 
+description = "坏事啦！我费了两天时间才搭出的博客根本憋不出东西？🤔" 
+headTitle = "Daydreamer" 
 lazyImage = true
 
 [markup]                        # 配置 Hugo 的内容标记处理
@@ -23,13 +23,17 @@ lazyImage = true
 post = "/blog/:title/"
 
 [[params.contact]]
-icon = "fa fa-envelope"
 link = ""
 name = "Email: lihen233@gmail.com"
 
 [[params.contact]]
 link = "https://t.me/Mutass_uni"
 name = "Telegram"
+
+[[params.contact]]
+name = "切换主题"
+link = "javascript:void(0)" # 使用 JavaScript 链接占位
+id = "theme-toggle"         # 给链接一个唯一的 ID
 
 [[params.socials]]
 name = "Haven"
