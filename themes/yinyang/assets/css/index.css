@@ -353,3 +353,13 @@ a:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* 手动深色模式 */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode a {
+  color: #90caf9;
+}
