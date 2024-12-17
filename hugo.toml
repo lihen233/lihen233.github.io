@@ -1,0 +1,34 @@
+baseURL = 'https://lihen233.github.io/'
+languageCode = 'zh-cn'
+title = 'Mutass的博客'
+theme = "yinyang"
+
+[params]
+description = "Keep It Simple, Stupid" 
+headTitle = "Az Életem Története" 
+lazyImage = true
+
+paginate = 12
+
+[markup]                        # 配置 Hugo 的内容标记处理
+  [markup.goldmark]             # 配置 Goldmark（Hugo 默认的 Markdown 渲染器）
+    [markup.goldmark.renderer]
+      unsafe = true             # 允许渲染 HTML 标签
+
+  [markup.highlight]            # 配置代码高亮功能
+    guessSyntax = true          # 自动猜测代码语言
+    noClasses = true            # 不使用外部 CSS 类，直接用内联样式
+    style = "tango"             # 使用 "tango" 代码高亮主题
+    tabWidth = 2                # 设置代码块 Tab 的宽度为 2
+
+[permalinks]
+post = "/blog/:title/"
+
+[[params.contact]]
+icon = "fa fa-envelope"
+link = ""
+name = "Email: lihen233@gmail.com"
+
+[[params.contact]]
+link = "https://t.me/Mutass_uni"
+name = "Telegram"
