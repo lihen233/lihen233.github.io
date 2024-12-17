@@ -1,0 +1,37 @@
+name: Deploy Hugo to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 触发条件：当源码推送到 main 分支时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出源码仓库代码
+      - name: Checkout source repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      # 安装 Hugo
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      # 生成静态文件
+      - name: Build Hugo
+        run: hugo --minify
+
+      # 推送生成的静态文件到博客仓库
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }} # 使用个人访问令牌
+          publish_dir: ./public # Hugo 生成的静态文件目录
+          external_repository: lihen233/lihen233.github.io # 博客仓库
+          publish_branch: main # 博客仓库的分支
