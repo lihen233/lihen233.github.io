@@ -136,10 +136,14 @@ a:hover {
 }
 
 .site-footer {
+  clear: both;
+  margin-top: 30px;
   padding: 20px 0;
   text-align: center;
-  font-size: 0.9em;
+  color: #aaa;
+  border-top: 1px solid #333;
 }
+
 
 /* 页脚内容样式 */
 .footer-content {
@@ -329,31 +333,37 @@ a:hover {
   }
 }
 
-/* 图片容器样式 */
+/* 瀑布流容器样式 */
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自动适应列数 */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 最小列宽250px */
+  grid-auto-rows: masonry; /* 使用 masonry 实现瀑布流效果 */
   gap: 16px; /* 图片之间的间隔 */
-  margin-bottom: 16px; /* 下方间距 */
-  margin: 0 auto; /* 居中 */
-  max-width: 1200px; /* 最大宽度，防止无限放大 */
-} 
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
-/* 等比例缩放的图片样式 */
+/* 图片外层，防止图片断行 */
+.image-gallery > div {
+  break-inside: avoid; /* 防止网格内部元素被拆分 */
+  margin-bottom: 10px; /* 添加下方间隔 */
+}
+
+/* 图片样式 */
 .image-gallery img {
-  width: 100%; /* 图片宽度占满父容器 */
-  height: auto; /* 高度自动调整，保证等比例缩放 */
-  max-height: 300px; /* 限制最大高度 */
-  object-fit: contain; /* 等比例缩放，完整显示图片 */
-  margin: 8px; * 图片之间的间距 */
+  width: 100%; /* 图片宽度填满网格 */
+  height: auto; /* 保持比例 */
+  display: block; /* 避免底部间隙 */
+  object-fit: cover; /* 裁剪填充图片 */
   border-radius: 8px; /* 圆角 */
-  cursor: pointer; /* 鼠标悬停手势 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 阴影效果 */
   transition: transform 0.3s ease-in-out;
 }
 
 .image-gallery img:hover {
-  transform: scale(1.05); /* 悬停时微微放大 */
+  transform: scale(1.05); /* 悬停时放大 */
 }
+
 
 /* 模态框样式 */
 .modal {
