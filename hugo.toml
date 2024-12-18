@@ -24,7 +24,7 @@ post = "/blog/:title/"
 
 [[params.contact]]
 link = ""
-name = "Email: lihen233@gmail.com"
+name = "Email: lihen233@outlook.hu"
 
 [[params.contact]]
 link = "https://t.me/Mutass_uni"
