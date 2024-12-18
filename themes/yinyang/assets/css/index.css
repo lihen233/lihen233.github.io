@@ -335,28 +335,28 @@ a:hover {
 /* 瀑布流容器样式 */
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 最小列宽250px */
-  grid-auto-rows: masonry; /* 使用 masonry 实现瀑布流效果 */
-  gap: 16px; /* 图片之间的间隔 */
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自适应列 */
+  gap: 10px; /* 图片之间的间隔 */
+  margin: 0 auto; /* 清除外边距 */
   max-width: 1200px;
 }
 
 /* 图片外层，防止图片断行 */
 .image-gallery > div {
-  break-inside: avoid; /* 防止网格内部元素被拆分 */
-  margin-bottom: 10px; /* 添加下方间隔 */
+  margin: 0; /* 清除外边距 */
+  padding: 0; /* 清除内边距 */
+  line-height: 0; /* 防止文本行高影响 */
 }
 
-/* 图片样式 */
+/* 图片基础样式 */
 .image-gallery img {
-  width: 100%; /* 图片宽度填满网格 */
-  height: auto; /* 保持比例 */
+  width: 100%; /* 宽度填满网格 */
+  height: 100%; /* 保持纵横比 */
   display: block; /* 避免底部间隙 */
-  object-fit: contain; /* 等比例缩放，完整显示图片 */
+  object-fit: cover; /* 填充网格 */
+  margin: 0; /* 确保没有外边距 */
   border-radius: 8px; /* 圆角 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 阴影效果 */
-  transition: transform 0.3s ease-in-out;
+  box-shadow: none; /* 无阴影 */
 }
 
 .image-gallery img:hover {
@@ -379,8 +379,8 @@ a:hover {
 }
 
 .modal img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 80vw; /* 限定模态框图片大小 */
+  max-height: 80vh;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.3s ease-in-out;

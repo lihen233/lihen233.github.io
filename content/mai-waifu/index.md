@@ -4,10 +4,18 @@ date: 2024-06-17
 layout: "single" # 使用你主题的单栏布局
 ---
 <div class="image-gallery">
-    <img src="https://i.imgur.com/O1cG9ow.jpeg" alt="照片1" class="clickable-image">
-    <img src="https://i.imgur.com/XWbQnUm.jpeg" alt="照片2" class="clickable-image">
-    <img src="https://i.imgur.com/4eTrDWC.jpeg" alt="照片3" class="clickable-image">
-    <img src="https://i.imgur.com/GinrupR.jpeg" alt="照片4" class="clickable-image">
-    <img src="https://i.imgur.com/j4757lY.jpeg" alt="照片5" class="clickable-image">
-    <img src="https://i.imgur.com/we6pceG.jpeg" alt="照片6" class="clickable-image">
+    <!-- 横屏图片 -->
+    <img data-src="https://i.imgur.com/XWbQnUm.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/4eTrDWC.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/GinrupR.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/uNs4VRC.png " class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/TQao6qo.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://s2.loli.net/2024/12/17/bSt9rERNDjJCf6z.jpg" class="lazy" class="clickable-image">
+    <!-- 竖屏图片 -->
+    <img data-src="https://i.imgur.com/O1cG9ow.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/j4757lY.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/we6pceG.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/bIz7tLf.jpeg" class="lazy" class="clickable-image">
+    <img data-src="https://i.imgur.com/8wulISP.jpeg" class="lazy" class="clickable-image">
+    <img src="https://i.imgur.com/xsFg3PJ.jpeg" class="clickable-image">
 </div>
