@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mutass的博客</title><link>https://lihen233.github.io/</link><description>Recent content on Mutass的博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lihen233.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>绝区零录</title><link>https://lihen233.github.io/zzz/</link><pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate><guid>https://lihen233.github.io/zzz/</guid><description>&lt;div class="image-gallery">
+ &lt;!-- 横屏图片 -->
+ &lt;!-- 竖屏图片 -->
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/绝区零-艾莲 (2)_20241218182242.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/绝区零-艾莲 (3)_20241218182242.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/绝区零-艾莲_20241218182242.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/绝区零-艾莲_20241218182242.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/绝区零-艾莲_20241218181945.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/绝区零-艾莲001_20241218183412.jpg" class="lazy clickable-image">
+&lt;/div></description></item><item><title>Hugo Git 推送流程总结</title><link>https://lihen233.github.io/posts/hugo-git-%E6%8E%A8%E9%80%81%E6%B5%81%E7%A8%8B%E6%80%BB%E7%BB%93/</link><pubDate>Tue, 17 Dec 2024 19:29:56 +0100</pubDate><guid>https://lihen233.github.io/posts/hugo-git-%E6%8E%A8%E9%80%81%E6%B5%81%E7%A8%8B%E6%80%BB%E7%BB%93/</guid><description>&lt;h1 id="hugo-git-推送流程总结">Hugo Git 推送流程总结&lt;/h1>
+&lt;p>以下是推送 Hugo 更新到 GitHub 并自动部署的完整流程：&lt;/p>
+&lt;hr>
+&lt;h2 id="1-生成-hugo-静态文件可选">1. 生成 Hugo 静态文件（可选）&lt;/h2>
+&lt;p>在 Hugo 项目根目录运行以下命令，生成静态网站文件到 &lt;code>public/&lt;/code> 目录：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo --cleanDestinationDir
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="2-使用-git-提交和推送更改">2. 使用 Git 提交和推送更改&lt;/h2>
+&lt;h3 id="在-vscode-中操作">&lt;strong>在 VSCode 中操作&lt;/strong>&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>暂存更改&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>在 VSCode 左侧的 &lt;strong>源代码管理&lt;/strong> (Source Control) 中，点击 &lt;strong>+&lt;/strong> 号将文件添加到暂存区。&lt;/li>
+&lt;li>等同于执行：
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git add .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>提交更改&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>在提交框中输入提交信息，例如：
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Update Hugo site: 添加新文章或修改内容
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>点击 &lt;strong>✓&lt;/strong> 图标（提交）。&lt;/li>
+&lt;li>等同于执行：
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#4e9a06">&amp;#34;Update Hugo site&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>推送到 GitHub&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>点击 &lt;strong>同步更改&lt;/strong> 按钮（⟳ 符号）。&lt;/li>
+&lt;li>等同于执行：
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git push origin main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="终端命令操作">&lt;strong>终端命令操作&lt;/strong>&lt;/h3>
+&lt;p>如果你更喜欢使用命令行，可以执行以下命令：&lt;/p></description></item><item><title>Hello World</title><link>https://lihen233.github.io/posts/hello-world/</link><pubDate>Tue, 17 Dec 2024 17:38:40 +0100</pubDate><guid>https://lihen233.github.io/posts/hello-world/</guid><description>&lt;p>测试测试&lt;/p></description></item><item><title>Test Post 13</title><link>https://lihen233.github.io/posts/test-post-13/</link><pubDate>Tue, 17 Dec 2024 15:46:02 +0100</pubDate><guid>https://lihen233.github.io/posts/test-post-13/</guid><description/></item><item><title>流萤集</title><link>https://lihen233.github.io/firefly/</link><pubDate>Mon, 17 Jun 2024 00:00:00 +0000</pubDate><guid>https://lihen233.github.io/firefly/</guid><description>&lt;div class="image-gallery">
+ &lt;!-- 横屏图片 -->
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道_20241218182242.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (1)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (1)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (2)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (9)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (7)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;!-- 竖屏图片 -->
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-星核猎手_6em04.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/崩坏：星穹铁道-流萤002_20241218183410.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤01_20241218190205.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (8)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (8)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (7)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (6)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (5)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (6)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (5)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (4)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (4)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (3)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (3)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (2)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (13)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (12)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (11)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (10)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (10)_20241218190643.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (9)_20241218190643.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤 (2)_20241218182242.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/星穹铁道-流萤_20241218182242.jpg" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/崩坏：星穹铁道-流萤002_20241218183410.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/image_2024-08-29_16-37-47_20241218183419.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/崩坏：星穹铁道-流萤003_20241218183407.jpg" class="lazy clickable-image">
+&lt;/div></description></item><item><title>随心集</title><link>https://lihen233.github.io/mai-waifu/</link><pubDate>Mon, 17 Jun 2024 00:00:00 +0000</pubDate><guid>https://lihen233.github.io/mai-waifu/</guid><description>&lt;div class="image-gallery">
+ &lt;!-- 横屏图片 -->
+ &lt;img data-src="https://i.imgur.com/4eTrDWC.jpeg" class="lazy" class="clickable-image">
+ &lt;img data-src="https://i.imgur.com/GinrupR.jpeg" class="lazy" class="clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/尘白禁区-姬辰星_20241218183402.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/黄泉+琪亚娜_20241218183416.png" class="lazy clickable-image">
+ &lt;img data-src="https://pub-b7ab28f0c9324878a1c7e1105b908320.r2.dev/2024/12/原神-甘雨_6BpJv.jpg" class="lazy clickable-image">
+ &lt;!-- 竖屏图片 -->
+&lt;/div></description></item></channel></rss>
