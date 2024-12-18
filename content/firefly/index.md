@@ -1,6 +1,7 @@
 ---
 title: "流萤集"
 date: 2024-06-17
+layout: single
 ---
 <div class="image-gallery">
     <!-- 横屏图片 -->
