@@ -144,7 +144,6 @@ a:hover {
   border-top: 1px solid #333;
 }
 
-
 /* 页脚内容样式 */
 .footer-content {
   max-width: 1200px;
@@ -354,7 +353,7 @@ a:hover {
   width: 100%; /* 图片宽度填满网格 */
   height: auto; /* 保持比例 */
   display: block; /* 避免底部间隙 */
-  object-fit: cover; /* 裁剪填充图片 */
+  object-fit: contain; /* 等比例缩放，完整显示图片 */
   border-radius: 8px; /* 圆角 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 阴影效果 */
   transition: transform 0.3s ease-in-out;
