@@ -33,3 +33,11 @@ name = "Telegram"
 [[params.socials]]
 name = "Haven"
 link = "/mai-waifu" # 跳转到本地页面（在Hugo中定义路径）
+
+[[params.socials]]
+name = "FireFly"
+link = "/firefly"
+
+[[params.socials]]
+name = "绝区零"
+link = "/ZZZ"

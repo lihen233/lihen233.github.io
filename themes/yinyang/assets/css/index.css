@@ -352,8 +352,8 @@ a:hover {
 .image-gallery img {
   width: 100%; /* 宽度填满网格 */
   height: 100%; /* 保持纵横比 */
-  display: block; /* 避免底部间隙 */
   object-fit: cover; /* 填充网格 */
+  display: block; /* 避免底部间隙 */
   margin: 0; /* 确保没有外边距 */
   border-radius: 8px; /* 圆角 */
   box-shadow: none; /* 无阴影 */
